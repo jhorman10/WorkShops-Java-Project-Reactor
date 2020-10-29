@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id "io.spring.dependency-management" version "1.0.10.RELEASE"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "io.projectreactor:reactor-bom:Bismuth-RELEASE"
+    }
+}
+
+dependencies {
+    implementation 'io.projectreactor:reactor-core'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
